@@ -1,0 +1,1 @@
+begin rewrite(output,'output.txt');write('10'+#13#10+'2 3 4 5 7 12 15 20 28 35');end.

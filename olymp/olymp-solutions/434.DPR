@@ -1,0 +1,51 @@
+{$APPTYPE CONSOLE}
+Var
+  f,g:text;
+  x,y,a,d:double;
+  p:longint;
+begin
+  p:=0;
+  assign(f,'input.txt');
+  reset(f);
+  read(f,x,y);
+  close(f);
+  if x<>0 then a:=(arctan(abs(y)/abs(x)))*180/pi;
+  if (y<0)and(x>0) then a:=360-a;
+  if (y<0)and(x<0) then a:=180+a;
+  if (y>0)and(x<0) then a:=180-a;
+  if (y=0)and(x>0) then a:=0;
+  if (y=0)and(x<0) then a:=180;
+  if (x=0)and(y>0) then a:=90;
+  if (x=0)and(y<0) then a:=270;
+  if (a>=0) and(a<9)   then p:=6;
+  if (a>9)  and(a<27)  then p:=13;
+  if (a>27) and(a<45)  then p:=4;
+  if (a>45) and(a<63)  then p:=18;
+  if (a>63) and(a<81)  then p:=1;
+  if (a>81) and(a<99)  then p:=20;
+  if (a>99) and(a<117) then p:=5;
+  if (a>117)and(a<135) then p:=12;
+  if (a>135)and(a<153) then p:=9;
+  if (a>153)and(a<171) then p:=14;
+  if (a>171)and(a<189) then p:=11;
+  if (a>189)and(a<207) then p:=8;
+  if (a>207)and(a<225) then p:=16;
+  if (a>225)and(a<243) then p:=7;
+  if (a>243)and(a<261) then p:=19;
+  if (a>261)and(a<279) then p:=3;
+  if (a>279)and(a<297) then p:=17;
+  if (a>297)and(a<315) then p:=2;
+  if (a>315)and(a<333) then p:=15;
+  if (a>333)and(a<351) then p:=10;
+  if (a>351)and(a<=360) then p:=6;
+  d:=sqrt(x*x+y*y);
+  if (d<170)and(d>162) then p:=p*2;
+  if (d<107)and(d> 99) then p:=p*3;
+  if (d>6.35)and(d<15.9) then p:=25;
+  if (d<6.35) then p:=50;
+  if (d>170) then p:=0;
+  assign(g,'output.txt');
+  rewrite(g);
+  writeln(g,p);
+  close(g);
+end.

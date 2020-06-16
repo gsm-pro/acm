@@ -1,0 +1,7 @@
+#include<fstream>
+
+int main() {
+	int a;
+	std::ifstream("input.txt") >> a;
+	std::ofstream("output.txt") << __builtin_popcount(a);
+}

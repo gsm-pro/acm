@@ -1,0 +1,1 @@
+var p,n:byte;begin read(p,n);write(p*n) end.
