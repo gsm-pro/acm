@@ -1,0 +1,13 @@
+Var
+  f,g:text;
+  a,b:longint;
+begin
+  assign(f,'input.txt');
+  reset(f);
+  read(f,a,b);
+  close(f);
+  assign(g,'output.txt');
+  rewrite(g);
+  writeln(g,2*(b-a)+a);
+  close(g);
+end.

@@ -1,0 +1,19 @@
+Var
+  f,g:text;
+  i,n,s:longint;
+begin
+  assign(f,'input.txt');
+  reset(f);
+  read(f,n);
+  close(f);
+  s:=0;
+  i:=0;
+  repeat
+    inc(i);
+    s:=s+i*i;
+  until s>=n;
+  assign(g,'output.txt');
+  rewrite(g);
+  writeln(g,i);
+  close(g);
+end.

@@ -1,0 +1,13 @@
+Var
+  f,g:text;
+  a,b,c:longint;
+begin
+  assign(f,'input.txt');
+  reset(f);
+  readln(f,a,b,c);
+  close(f);
+  assign(g,'output.txt');
+  rewrite(g);
+  writeln(g,abs(a-b)+abs(b-c));
+  close(g);
+end.

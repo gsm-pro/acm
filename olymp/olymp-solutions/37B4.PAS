@@ -1,0 +1,14 @@
+Var
+  f,g:text;
+  r,a:real;
+begin
+  assign(f,'input.txt');
+  reset(f);
+  readln(f,a);
+  close(f);
+  r:=3.28789762*a;
+  assign(g,'output.txt');
+  rewrite(g);
+  writeln(g,r:0:5);
+  close(g);
+end.

@@ -1,0 +1,15 @@
+Var
+  g1,g2:text;
+  k,v,o,m,f,s,t:longint;
+  sum:real;
+begin
+  assign(g1,'input.txt');
+  reset(g1);
+  read(g1,k,v,o,m,f,s,t);
+  close(g1);
+  sum:=2*(k/v+o*m/60)+f+s+t+1;
+  assign(g2,'output.txt');
+  rewrite(g2);
+  writeln(g2,sum:0:3);
+  close(g2);
+end.
